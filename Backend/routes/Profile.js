@@ -1,0 +1,11 @@
+const express = require('express')
+const Routes = express.Router()
+const {SignUp,Login,Update,AllUsers,Users,FindUsingName} = require('../controllers/Auth')
+const {Auth}  = require('../middlewares/middle')
+Routes.post('/Signup',SignUp)
+Routes.post('/Login',Login)
+Routes.put('/Update',Auth, Update)
+Routes.get('/GetAllUsers',AllUsers)
+Routes.get('/GetUsers',Users)
+Routes.get('/FindByName',FindUsingName)
+module.exports = Routes
